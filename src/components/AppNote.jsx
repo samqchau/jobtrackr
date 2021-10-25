@@ -34,9 +34,11 @@ const AppNote = ({ note, app }) => {
 
   const handleUpdateClick = () => {
     setErrorMessage('');
-    setEditing(false);
-    if (content.length !== 0) {
+    if (content.length !== 0 && content !== note.content) {
       dispatch(updateNoteById(app, note, content));
+      setEditing(false);
+    } else if (note.content === content) {
+      setErrorMessage('Please change content to something new.');
     } else {
       setErrorMessage('Empty notes cannot be saved');
     }
