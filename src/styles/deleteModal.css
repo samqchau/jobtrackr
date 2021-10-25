@@ -1,0 +1,41 @@
+.deleteModal .modal-content {
+  border-radius: 8px;
+  width: 300px;
+  height: 300px;
+  transform: translateX(33.5%);
+  text-transform: capitalize;
+}
+.deleteModal-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 75px 50px 70px;
+  text-align: center;
+  background-color: black;
+
+  border: 1px solid rgb(255, 212, 156);
+  border-radius: 8px !important;
+}
+.deleteModal-body > h4 {
+  letter-spacing: 1px !important;
+  text-transform: unset;
+  font-size: 18px;
+  color: white;
+}
+.deleteModal-body > p {
+  margin: 10px 0 26px;
+  font-size: 16px;
+  text-transform: none;
+  width: 220px;
+  letter-spacing: 0px !important;
+  color: rgb(201, 201, 201) !important;
+}
+.deleteModal-delete-button {
+  background-color: var(--indigo) !important;
+}
+
+.deleteModal-cancel-button {
+  background-color: white !important;
+  color: black !important;
+}

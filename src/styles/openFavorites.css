@@ -1,0 +1,16 @@
+.openFavorites {
+  height: 40px;
+  width: 40px;
+  padding: 12px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  background-color: #797979;
+  margin-right: 8px;
+  border-radius: 50%;
+  box-shadow: rgba(0, 0, 0, 0.3) inset 10px 10px 5px,
+    rgba(0, 0, 0, 0.3) inset -10px -10px 5px;
+  transition: all 0.35s ease-in;
+}

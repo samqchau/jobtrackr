@@ -1,0 +1,11 @@
+const result = {
+  draggableId: 'The id of the draggable',
+  source: {
+    droppableId: '',
+    index: 0
+  },
+  destination: {
+    droppableId: 'column-1',
+    index: 1
+  }
+}

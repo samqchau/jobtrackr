@@ -1,0 +1,35 @@
+.favoritesModal {
+  overflow-y: hidden !important;
+}
+.favoritesModal > .modal-dialog {
+  max-width: 297px;
+}
+.favoritesModal::-webkit-scrollbar {
+  display: none;
+}
+.favoritesModal-body {
+  padding: 0px !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 600px;
+  border-radius: 10px;
+}
+.favoritesModal-body .list-container {
+  width: 100%;
+  height: 100%;
+  max-width: 297px;
+  padding-bottom: 10px;
+}
+.favoritesModal-body > .list-container > .list-body-main {
+  height: 525px;
+}
+.favoritesModal > div > .modal-content {
+  border: none;
+  background: none;
+}
+.favoritesModal-body {
+  background: none !important;
+  background-color: none !important;
+  border: unset !important;
+}

@@ -1,0 +1,71 @@
+.header-background {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  color: white;
+  box-shadow: rgb(255, 200, 117) 0px 3px 5px, rgb(80, 80, 80) 0px 7px 5px;
+  border-radius: 0px 0px 4px 4px;
+  overflow: hidden;
+  padding: 0px;
+  margin-bottom: 25px;
+}
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 0px;
+  align-items: center;
+  height: 56px;
+  overflow: hidden;
+  max-width: 1944px;
+}
+.header-left,
+.header-center,
+.header-right {
+  display: flex;
+  align-items: center;
+}
+.header-left > .logo-container {
+  margin-left: 8px;
+  margin-right: 8px;
+}
+.header-logo-text {
+  font-size: 16px;
+  font-weight: bold;
+  font-family: sans-serif;
+  cursor: default;
+}
+.header-center-greeting {
+  font-size: 13px;
+  font-weight: bold;
+  font-family: sans-serif;
+}
+.header-icon {
+  height: 40px;
+  width: 40px;
+  padding: 12px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  background-color: #797979;
+  margin-right: 8px;
+  border-radius: 50%;
+  box-shadow: rgba(0, 0, 0, 0.3) inset 10px 10px 5px,
+    rgba(0, 0, 0, 0.3) inset -10px -10px 5px;
+  transition: all 0.2s ease-in;
+}
+.header-icon:hover {
+  background-color: rgb(255 243 188);
+  box-shadow: rgba(248, 248, 248, 0.829) inset 1px 1px 5px,
+    rgba(73, 73, 73, 0.5) inset -1px -1px 5px;
+}
+.header-icon:hover > i {
+  color: #ffc400;
+}
+@media only screen and (min-width: 1950px) {
+  .header-container {
+    padding: 0px !important;
+  }
+}

@@ -1,0 +1,76 @@
+.note {
+  width: 100%;
+  height: min-content;
+  padding-bottom: 10px;
+  margin-bottom: 7px;
+  padding-left: 10px;
+}
+.note-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.note-header-date {
+  width: 70px;
+  font-size: 12px;
+  margin-right: 10px;
+}
+.note-header-border {
+  width: 90%;
+  height: 1px;
+  background-color: white;
+}
+.note-header-buttons {
+  width: 50px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-left: 10px;
+}
+.note-header-buttons > i {
+  margin-bottom: 3px;
+  width: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.note-header-buttons > i:hover {
+  color: #ffc400;
+}
+.note-body-content {
+  width: 97%;
+  margin: auto;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.updatenote-form-label-container {
+  display: flex;
+  align-items: center;
+}
+.updatenote-form-button-container {
+  margin-left: auto;
+}
+.updatenote-form-close-button {
+  cursor: pointer;
+  font-size: 18px;
+  margin-right: 6px;
+}
+.noteupdateform-update-button {
+  width: 100%;
+  display: flex;
+  padding-right: 10px;
+  justify-content: flex-end;
+}
+.noteupdate-textarea {
+  width: 95% !important;
+  margin: auto;
+  margin-top: 9px;
+  border-radius: 3px !important;
+}
+@media only screen and (max-width: 680px) {
+  .noteupdateform-update-button {
+    padding-right: 6px;
+  }
+}
