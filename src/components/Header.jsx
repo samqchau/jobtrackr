@@ -1,15 +1,10 @@
 import React from 'react';
 import { Container } from 'react-bootstrap';
-import { useSelector } from 'react-redux';
-import LogoutButton from './LogoutButton';
 import OpenFavorites from './OpenFavorites';
 import '../styles/header.css';
 import Logo from './Logo';
 
 const Header = () => {
-  const userLogin = useSelector((state) => state.userLogin);
-  const { userInfo } = userLogin;
-
   return (
     <Container fluid className='header-background'>
       <Container className='header-container' fluid>
@@ -19,8 +14,7 @@ const Header = () => {
         </div>
         <div className='header-center'></div>
         <div className='header-right'>
-          {userInfo && <OpenFavorites />}
-          <LogoutButton />
+          <OpenFavorites />
         </div>
       </Container>
     </Container>

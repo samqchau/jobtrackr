@@ -6,7 +6,7 @@ import {
 } from '../constants/noteConstants';
 import { USER_APPS_SUCCESS } from '../constants/appConstants';
 import nameValuePairs from '../data/lookUpTables/listNameValuePairs';
-
+//Work in Progress
 export const saveNote = (app, content) => async (dispatch, getState) => {
   try {
     dispatch({ type: POST_NOTE_REQUEST });
@@ -36,7 +36,7 @@ export const saveNote = (app, content) => async (dispatch, getState) => {
     dispatch({ type: POST_NOTE_FAIL });
   }
 };
-
+//Work in Progress
 export const deleteNoteById = (app, noteId) => async (dispatch, getState) => {
   const {
     userLogin: { userInfo },
@@ -56,7 +56,7 @@ export const deleteNoteById = (app, noteId) => async (dispatch, getState) => {
   dispatch({ type: USER_APPS_SUCCESS, payload: appsCopy });
   await axios.delete(`/api/notes/${noteId}`, config);
 };
-
+//Work in Progress
 export const updateNoteById = (app, note) => async (dispatch, getState) => {
   const {
     userLogin: { userInfo },

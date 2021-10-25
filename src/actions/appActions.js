@@ -43,32 +43,23 @@ export const addAppToList = (application) => async (dispatch, getState) => {
   }
 };
 
+//DONE
 export const deleteAppById = (app) => async (dispatch, getState) => {
-  const {
-    userLogin: { userInfo },
-  } = getState();
   const {
     userApps: { apps },
   } = getState();
   const { id, list, index, fav_index, favorited } = app;
 
-  let config = {
-    headers: {
-      Authorization: `Bearer ${userInfo.token}`,
-      'Content-Type': 'application/json',
-    },
-  };
-
-  let data = { ...config, data: { id, index, list, fav_index, favorited } };
-
   let appsCopy = apps;
 
-  for (let key in appsCopy) {
-    appsCopy[key].forEach((app) => {
-      if (app.fav_index > fav_index) {
-        app.fav_index -= 1;
-      }
-    });
+  if (favorited) {
+    for (let key in appsCopy) {
+      appsCopy[key].forEach((app) => {
+        if (app.fav_index > fav_index) {
+          app.fav_index -= 1;
+        }
+      });
+    }
   }
 
   let listName = listNameValuePairs[list];
@@ -80,11 +71,10 @@ export const deleteAppById = (app) => async (dispatch, getState) => {
 
   appsArr = appsArr.filter((app) => app.id !== id);
   appsCopy[listName] = appsArr;
+  localStorage.setItem('apps', JSON.stringify(appsCopy));
   dispatch({ type: USER_APPS_SUCCESS, payload: appsCopy });
-
-  await axios.delete('/api/apps', data);
 };
-
+//WORK IN PROGRESS
 export const updateAppById = (app) => async (dispatch, getState) => {
   try {
     dispatch({ type: UPDATE_APP_REQUEST });
@@ -123,12 +113,8 @@ export const updateAppById = (app) => async (dispatch, getState) => {
     });
   }
 };
-
+//DONE
 export const favoriteAppById = (app) => async (dispatch, getState) => {
-  let {
-    userLogin: { userInfo },
-  } = getState();
-
   let {
     userApps: { apps },
   } = getState();
@@ -158,14 +144,6 @@ export const favoriteAppById = (app) => async (dispatch, getState) => {
   let arr = apps[list];
   arr[arr.indexOf((e) => (e.id = app.id))] = app;
   appsCopy[list] = arr;
-
-  let config = {
-    headers: {
-      Authorization: `Bearer ${userInfo.token}`,
-    },
-  };
-
+  localStorage.setItem('apps', JSON.stringify(appsCopy));
   dispatch({ type: USER_APPS_SUCCESS, payload: appsCopy });
-  await axios.put('/api/apps/update/fav', app, config);
-  await axios.put('/api/apps', app, config);
 };
