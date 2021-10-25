@@ -74,14 +74,10 @@ export const deleteAppById = (app) => async (dispatch, getState) => {
   localStorage.setItem('apps', JSON.stringify(appsCopy));
   dispatch({ type: USER_APPS_SUCCESS, payload: appsCopy });
 };
-//WORK IN PROGRESS
+//DONE
 export const updateAppById = (app) => async (dispatch, getState) => {
   try {
     dispatch({ type: UPDATE_APP_REQUEST });
-    let {
-      userLogin: { userInfo },
-    } = getState();
-
     let {
       userApps: { apps },
     } = getState();
@@ -90,15 +86,8 @@ export const updateAppById = (app) => async (dispatch, getState) => {
     let arr = apps[list];
     arr[arr.indexOf((e) => (e.id = app.id))] = app;
     appsCopy[list] = arr;
-
-    let config = {
-      headers: {
-        Authorization: `Bearer ${userInfo.token}`,
-      },
-    };
-
+    localStorage.setItem('apps', JSON.stringify(appsCopy));
     dispatch({ type: USER_APPS_SUCCESS, payload: appsCopy });
-    await axios.put('/api/apps', app, config);
     dispatch({ type: UPDATE_APP_SUCCESS });
     setTimeout(() => {
       dispatch({ type: UPDATE_APP_RESET });
