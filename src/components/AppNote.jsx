@@ -17,6 +17,8 @@ const AppNote = ({ note, app }) => {
   const [content, setContent] = useState(note ? note.content : '');
   const [showDeleteModal, setShowDeleteModal] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
+  const [editing, setEditing] = useState(false);
+
   const closeDeleteModal = () => {
     setShowDeleteModal(false);
   };
@@ -32,13 +34,9 @@ const AppNote = ({ note, app }) => {
 
   const handleUpdateClick = () => {
     setErrorMessage('');
+    setEditing(false);
     if (content.length !== 0) {
-      let note = {
-        noteId,
-        content,
-      };
-      dispatch(updateNoteById(app, note));
-      history.push(`/app_notes/${app.id}`);
+      dispatch(updateNoteById(app, note, content));
     } else {
       setErrorMessage('Empty notes cannot be saved');
     }
@@ -64,21 +62,19 @@ const AppNote = ({ note, app }) => {
         >
           <div className='note-header'>
             <div className='note-header-date'>
-              {note.created_on && formatDate(trimDate(note.created_on))}
+              {note.updated_on ? note.updated_on : note.created_on}
             </div>
             <div className='note-header-border'></div>
             <div className='note-header-buttons'>
               <i
-                className={`${
-                  noteId === note.id ? 'fas fa-times' : 'far fa-edit'
-                }`}
+                className={`${editing ? 'fas fa-times' : 'far fa-edit'}`}
                 title={`${noteId === note.id ? 'Close' : 'Edit'}`}
                 onClick={(e) => {
                   e.stopPropagation();
-                  if (noteId === note.id) {
-                    history.push(`/app_notes/${app.id}`);
+                  if (editing) {
+                    setEditing(false);
                   } else {
-                    history.push(`/app_notes/${app.id}/edit/${note.id}`);
+                    setEditing(true);
                   }
                 }}
               />
@@ -95,54 +91,49 @@ const AppNote = ({ note, app }) => {
             {noteId !== note.id && (
               <div className='note-body-content'>{note.content}</div>
             )}
-            <Route
-              render={(props) =>
-                note.id === location.pathname.split('/')[4] && (
-                  <Form>
-                    <Form.Control
-                      as='textarea'
-                      className='noteupdate-textarea'
-                      value={content}
-                      onChange={(e) => {
-                        setContent(e.target.value);
+            {editing && (
+              <Form>
+                <Form.Control
+                  as='textarea'
+                  className='noteupdate-textarea'
+                  value={content}
+                  onChange={(e) => {
+                    setContent(e.target.value);
+                  }}
+                  placeholder='Update note...'
+                ></Form.Control>
+                <div className='noteupdateform-update-button'>
+                  {errorMessage && (
+                    <Message
+                      variant='danger'
+                      style={{
+                        margin: '0px',
+                        padding: '0px',
+                        height: '30px',
+                        display: 'flex',
+                        alignItems: 'center',
+                        paddingTop: '3px',
+                        paddingLeft: '23px',
+                        borderRadius: '5px',
+                        width: '561px',
                       }}
-                      placeholder='Update note...'
-                    ></Form.Control>
-                    <div className='noteupdateform-update-button'>
-                      {errorMessage && (
-                        <Message
-                          variant='danger'
-                          style={{
-                            margin: '0px',
-                            padding: '0px',
-                            height: '30px',
-                            display: 'flex',
-                            alignItems: 'center',
-                            paddingTop: '3px',
-                            paddingLeft: '23px',
-                            borderRadius: '5px',
-                            width: '561px',
-                          }}
-                        >
-                          {errorMessage}
-                        </Message>
-                      )}
-                      <Button
-                        className='modal-button detail-modal-updateButton'
-                        style={{ marginRight: '5px' }}
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          handleUpdateClick();
-                        }}
-                      >
-                        Update
-                      </Button>
-                    </div>
-                  </Form>
-                )
-              }
-              path={'/app_notes/:id/edit/:noteId'}
-            />
+                    >
+                      {errorMessage}
+                    </Message>
+                  )}
+                  <Button
+                    className='modal-button detail-modal-updateButton'
+                    style={{ marginRight: '5px' }}
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      handleUpdateClick();
+                    }}
+                  >
+                    Update
+                  </Button>
+                </div>
+              </Form>
+            )}
           </div>
         </div>
         <DeleteAppModal

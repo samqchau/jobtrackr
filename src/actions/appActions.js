@@ -1,4 +1,3 @@
-import axios from 'axios';
 import {
   USER_APPS_SUCCESS,
   POST_APP_REQUEST,

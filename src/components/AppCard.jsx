@@ -5,7 +5,7 @@ import { deleteAppById } from '../actions/appActions';
 import { UPDATE_APP_RESET } from '../constants/appConstants';
 import { useHistory } from 'react-router-dom';
 
-import FooterEvent from './FooterEvent';
+//import FooterEvent from './FooterEvent';
 import DeleteAppModal from './modals/DeleteAppModal';
 import AppDetailsModal from './modals/AppDetailsModal';
 import FavoriteButton from './FavoriteButton';
@@ -87,11 +87,13 @@ const AppCard = ({ app, favslist, index }) => {
                 ></i>
               </div>
             </div>
-            <div className='app-card-footer'>
+            {/*
+              <div className='app-card-footer'>
               <div className='app-card-footer-content'>
                 <FooterEvent app={app} />
               </div>
             </div>
+            */}
           </div>
         )}
       </Draggable>
