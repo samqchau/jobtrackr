@@ -6,8 +6,6 @@ import { USER_APPS_SUCCESS } from '../constants/appConstants';
 
 const FavoritedDragDropContext = ({ children }) => {
   const dispatch = useDispatch();
-  const userLogin = useSelector((state) => state.userLogin);
-  const { userInfo } = userLogin;
   const userApps = useSelector((state) => state.userApps);
   const { apps } = userApps;
 
@@ -27,13 +25,6 @@ const FavoritedDragDropContext = ({ children }) => {
       sourceIndex: source.index,
       destinationIndex: destination.index,
       appId: draggableId,
-    };
-
-    let config = {
-      headers: {
-        Authorization: `Bearer ${userInfo.token}`,
-        'Content-Type': 'application/json',
-      },
     };
 
     let appsCopy = apps;
@@ -64,7 +55,7 @@ const FavoritedDragDropContext = ({ children }) => {
       }
     }
 
-    await axios.put('/api/apps/update/fav_index', moveData, config);
+    localStorage.setItem('apps', JSON.stringify(appsCopy));
     dispatch({ type: USER_APPS_SUCCESS, payload: appsCopy });
   };
 

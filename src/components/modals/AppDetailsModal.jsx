@@ -1,11 +1,15 @@
 import { useState } from 'react';
 import { Modal } from 'react-bootstrap';
+import { useDispatch } from 'react-redux';
 import NotesModal from '../NotesModal';
 import DetailModal from '../DetailModal';
 import '../../styles/appDetailsModal.css';
+import { closeNoteEditors } from '../../actions/noteActions';
 
 const AppDetailsModal = ({ app, show, handleClose }) => {
+  const dispatch = useDispatch();
   const [tab, setTab] = useState('details');
+
   const toNotes = () => {
     setTab('notes');
   };
@@ -18,6 +22,7 @@ const AppDetailsModal = ({ app, show, handleClose }) => {
       show={show}
       onHide={() => {
         handleClose();
+        dispatch(closeNoteEditors(app));
         setTimeout(() => {
           toDetails();
         }, 500);

@@ -8,8 +8,6 @@ import nameValuePairs from '../data/lookUpTables/listNameValuePairs';
 const DragDropContextComponent = ({ children }) => {
   const dispatch = useDispatch();
 
-  const userLogin = useSelector((state) => state.userLogin);
-  const { userInfo } = userLogin;
   const userApps = useSelector((state) => state.userApps);
   const { apps } = userApps;
 
@@ -24,13 +22,6 @@ const DragDropContextComponent = ({ children }) => {
       return;
 
     let appsCopy = apps;
-
-    let config = {
-      headers: {
-        Authorization: `Bearer ${userInfo.token}`,
-        'Content-Type': 'application/json',
-      },
-    };
 
     let moveData = {
       sourceIndex: source.index,
@@ -59,15 +50,13 @@ const DragDropContextComponent = ({ children }) => {
       arr.splice(destination.index, 0, app);
       appsCopy[listName] = arr;
 
-      await axios.put('/api/apps/update/index', moveData, config);
-
+      localStorage.setItem('apps', JSON.stringify(appsCopy));
       dispatch({ type: USER_APPS_SUCCESS, payload: appsCopy });
       return;
     }
 
     if (destination.droppableId !== source.droppableId) {
       let sourceArr = appsCopy[source.droppableId];
-
       let destinationArr = appsCopy[destination.droppableId];
       let app = sourceArr.splice(source.index, 1);
       app = app[0];
@@ -82,9 +71,8 @@ const DragDropContextComponent = ({ children }) => {
       destinationArr.splice(destination.index, 0, app);
       appsCopy[source.droppableId] = sourceArr;
       appsCopy[destination.droppableId] = destinationArr;
-
+      localStorage.setItem('apps', JSON.stringify(appsCopy));
       dispatch({ type: USER_APPS_SUCCESS, payload: appsCopy });
-      await axios.put('/api/apps/update/index', moveData, config);
     }
   };
 
