@@ -10,7 +10,7 @@ import Message from './Message';
 import ColorSelect from './ColorSelect';
 import DetailModalNav from './DetailModalNav';
 
-const DetailModal = ({ app, handleClose }) => {
+const DetailModal = ({ app, handleClose, tab, toDetails, toNotes }) => {
   const dispatch = useDispatch();
 
   const updateApp = useSelector((state) => state.updateApp);
@@ -158,7 +158,13 @@ const DetailModal = ({ app, handleClose }) => {
             </div>
             <FavoriteButton app={app} color={color} />
           </div>
-          <DetailModalNav app={app} color={color} />
+          <DetailModalNav
+            app={app}
+            color={color}
+            tab={tab}
+            toDetails={toDetails}
+            toNotes={toNotes}
+          />
         </Row>
       </Modal.Header>
       <Modal.Body

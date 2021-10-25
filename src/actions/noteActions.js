@@ -23,6 +23,7 @@ export const saveNote = (app, content) => async (dispatch, getState) => {
       content,
       id: uuid(),
       created_on,
+      editing: false,
     };
     let appsCopy = apps;
     let listName = nameValuePairs[app.list];
@@ -75,8 +76,40 @@ export const updateNoteById =
       ...note,
       content,
       updated_on,
+      editing: false,
     };
     appsCopy[listName] = arr;
     localStorage.setItem('apps', JSON.stringify(appsCopy));
     dispatch({ type: USER_APPS_SUCCESS, payload: appsCopy });
   };
+
+export const toggleEditingNote = (app, note) => (dispatch, getState) => {
+  const {
+    userApps: { apps },
+  } = getState();
+  let appsCopy = apps;
+  let listName = nameValuePairs[app.list];
+  let arr = appsCopy[listName];
+  let index = arr.findIndex((e) => e.id === app.id);
+  let noteIndex = arr[index].notes.findIndex((e) => e.id === note.id);
+  arr[index].notes[noteIndex] = {
+    ...note,
+    editing: !note.editing,
+  };
+  appsCopy[listName] = arr;
+  localStorage.setItem('apps', JSON.stringify(appsCopy));
+  dispatch({ type: USER_APPS_SUCCESS, payload: appsCopy });
+};
+
+export const closeNoteEditors = (app) => (dispatch, getState) => {
+  const {
+    userApps: { apps },
+  } = getState();
+  let appsCopy = apps;
+  let listName = nameValuePairs[app.list];
+  let arr = apps[listName];
+  let index = arr.findIndex((e) => e.id === app.id);
+  appsCopy[listName][index].notes.forEach((n) => (n.editing = false));
+  localStorage.setItem('apps', JSON.stringify(appsCopy));
+  dispatch({ type: USER_APPS_SUCCESS, payload: appsCopy });
+};

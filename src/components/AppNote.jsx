@@ -1,23 +1,21 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import '../styles/note.css';
-import { trimDate, formatDate } from '../helpers/dateHelpers';
 import DeleteAppModal from './modals/DeleteAppModal';
-import { deleteNoteById, updateNoteById } from '../actions/noteActions';
+import {
+  deleteNoteById,
+  updateNoteById,
+  toggleEditingNote,
+  closeNoteEditors,
+} from '../actions/noteActions';
 import { useDispatch } from 'react-redux';
-import { useHistory, Route, useLocation } from 'react-router-dom';
 import Message from './Message';
 
-const AppNote = ({ note, app }) => {
+const AppNote = ({ note, app, closeCreatingNote, clearNoteContent }) => {
   const dispatch = useDispatch();
-  const history = useHistory();
-  const location = useLocation();
-  let path = location.pathname;
-  let noteId = location.pathname.split('/')[4];
   const [content, setContent] = useState(note ? note.content : '');
   const [showDeleteModal, setShowDeleteModal] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
-  const [editing, setEditing] = useState(false);
 
   const closeDeleteModal = () => {
     setShowDeleteModal(false);
@@ -34,9 +32,8 @@ const AppNote = ({ note, app }) => {
 
   const handleUpdateClick = () => {
     setErrorMessage('');
-    if (content.length !== 0 && content !== note.content) {
+    if (content.trim().length !== 0 && content !== note.content) {
       dispatch(updateNoteById(app, note, content));
-      setEditing(false);
     } else if (note.content === content) {
       setErrorMessage('Please change content to something new.');
     } else {
@@ -44,24 +41,10 @@ const AppNote = ({ note, app }) => {
     }
   };
 
-  useEffect(() => {
-    setErrorMessage('');
-    return () => {
-      setErrorMessage('');
-    };
-  }, [path]);
-
   return (
     note && (
       <>
-        <div
-          className='note'
-          onClick={(e) => {
-            if (noteId === note.id) {
-              e.stopPropagation();
-            }
-          }}
-        >
+        <div className='note'>
           <div className='note-header'>
             <div className='note-header-date'>
               {note.updated_on ? note.updated_on : note.created_on}
@@ -69,15 +52,17 @@ const AppNote = ({ note, app }) => {
             <div className='note-header-border'></div>
             <div className='note-header-buttons'>
               <i
-                className={`${editing ? 'fas fa-times' : 'far fa-edit'}`}
-                title={`${noteId === note.id ? 'Close' : 'Edit'}`}
+                className={`${note.editing ? 'fas fa-times' : 'far fa-edit'}`}
+                title={`${!note.editing ? 'Edit' : 'Close'}`}
                 onClick={(e) => {
                   e.stopPropagation();
-                  if (editing) {
-                    setEditing(false);
-                  } else {
-                    setEditing(true);
+                  clearNoteContent();
+                  closeCreatingNote();
+                  if (!note.editing) {
+                    dispatch(closeNoteEditors(app));
                   }
+                  dispatch(toggleEditingNote(app, note));
+                  setContent(note.content);
                 }}
               />
               <i
@@ -90,10 +75,7 @@ const AppNote = ({ note, app }) => {
             </div>
           </div>
           <div className='note-body'>
-            {noteId !== note.id && (
-              <div className='note-body-content'>{note.content}</div>
-            )}
-            {editing && (
+            {note.editing ? (
               <Form>
                 <Form.Control
                   as='textarea'
@@ -135,6 +117,8 @@ const AppNote = ({ note, app }) => {
                   </Button>
                 </div>
               </Form>
+            ) : (
+              <div className='note-body-content'>{note.content}</div>
             )}
           </div>
         </div>
