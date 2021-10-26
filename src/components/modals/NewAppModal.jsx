@@ -5,7 +5,8 @@ import '../../styles/newAppModal.css';
 import { addAppToList } from '../../actions/appActions';
 import ColorSelect from '../ColorSelect';
 import Message from '../Message';
-import { POST_APP_RESET } from '../../constants/appConstants';
+import { APP_TOOL_TIP_ON, POST_APP_RESET } from '../../constants/appConstants';
+import { noApps } from '../../helpers/NoApps';
 
 const listValues = [
   'Wishlist',
@@ -20,6 +21,8 @@ const NewAppModal = ({ show, handleClose, listValue }) => {
   const dispatch = useDispatch();
   const postApp = useSelector((state) => state.postApp);
   const { success, error } = postApp;
+  const userApps = useSelector((state) => state.userApps);
+  const { apps } = userApps;
 
   let today = new Date(Date());
   let dd = String(today.getDate()).padStart(2, '0');
@@ -112,6 +115,9 @@ const NewAppModal = ({ show, handleClose, listValue }) => {
     handleClose();
     resetForm();
     closeColorSelect();
+    if (noApps(apps)) {
+      dispatch({ type: APP_TOOL_TIP_ON });
+    }
   };
 
   return (
@@ -138,7 +144,7 @@ const NewAppModal = ({ show, handleClose, listValue }) => {
           >
             Save
           </Button>
-          <Button variant='dark' onClick={handleClose} className='modal-button'>
+          <Button variant='dark' onClick={onHide} className='modal-button'>
             Close
           </Button>
         </div>

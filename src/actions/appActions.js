@@ -7,11 +7,12 @@ import {
   UPDATE_APP_SUCCESS,
   UPDATE_APP_FAIL,
   UPDATE_APP_RESET,
+  APP_TOOL_TIP_ON,
 } from '../constants/appConstants';
 import listNameValuePairs from '../data/lookUpTables/listNameValuePairs';
 import { v4 as uuid } from 'uuid';
+import { noApps } from '../helpers/NoApps';
 
-//DONE
 export const addAppToList = (application) => async (dispatch, getState) => {
   dispatch({ type: POST_APP_REQUEST });
   try {
@@ -42,7 +43,6 @@ export const addAppToList = (application) => async (dispatch, getState) => {
   }
 };
 
-//DONE
 export const deleteAppById = (app) => async (dispatch, getState) => {
   const {
     userApps: { apps },
@@ -72,8 +72,10 @@ export const deleteAppById = (app) => async (dispatch, getState) => {
   appsCopy[listName] = appsArr;
   localStorage.setItem('apps', JSON.stringify(appsCopy));
   dispatch({ type: USER_APPS_SUCCESS, payload: appsCopy });
+  if (noApps(appsCopy)) {
+    dispatch({ type: APP_TOOL_TIP_ON });
+  }
 };
-//DONE
 export const updateAppById = (app) => async (dispatch, getState) => {
   try {
     dispatch({ type: UPDATE_APP_REQUEST });
@@ -101,7 +103,7 @@ export const updateAppById = (app) => async (dispatch, getState) => {
     });
   }
 };
-//DONE
+
 export const favoriteAppById = (app) => async (dispatch, getState) => {
   let {
     userApps: { apps },

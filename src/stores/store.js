@@ -7,8 +7,11 @@ import {
   userAppsReducer,
   postAppReducer,
   updateAppReducer,
+  toolTipReducer,
 } from '../reducers/appReducer';
 import { notePostReducer } from '../reducers/noteReducer';
+import { noApps } from '../helpers/NoApps.js';
+
 const reducer = combineReducers({
   userApps: userAppsReducer,
   userLogin: userLoginReducer,
@@ -16,6 +19,7 @@ const reducer = combineReducers({
   postApp: postAppReducer,
   updateApp: updateAppReducer,
   notePost: notePostReducer,
+  toolTip: toolTipReducer,
 });
 
 const userInfoFromStorage = sessionStorage.getItem('userInfo')
@@ -35,7 +39,11 @@ const userAppsFromStorage = localStorage.getItem('apps')
 
 const initialState = {
   userLogin: { userInfo: userInfoFromStorage },
-  userApps: { apps: userAppsFromStorage },
+  userApps: {
+    apps: userAppsFromStorage,
+    displayToolTip: noApps(userAppsFromStorage),
+  },
+  toolTip: noApps(userAppsFromStorage),
 };
 
 const middleware = [thunk];

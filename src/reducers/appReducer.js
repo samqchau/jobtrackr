@@ -11,6 +11,8 @@ import {
   UPDATE_APP_SUCCESS,
   UPDATE_APP_FAIL,
   UPDATE_APP_RESET,
+  APP_TOOL_TIP_ON,
+  APP_TOOL_TIP_OFF,
 } from '../constants/appConstants';
 
 export const userAppsReducer = (
@@ -74,6 +76,17 @@ export const updateAppReducer = (state = {}, action) => {
       return { loading: false, error: action.payload };
     case UPDATE_APP_RESET:
       return {};
+    default:
+      return state;
+  }
+};
+
+export const toolTipReducer = (state = {}, action) => {
+  switch (action.type) {
+    case APP_TOOL_TIP_OFF:
+      return false;
+    case APP_TOOL_TIP_ON:
+      return true;
     default:
       return state;
   }

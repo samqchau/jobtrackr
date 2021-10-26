@@ -1,5 +1,4 @@
 import React from 'react';
-import axios from 'axios';
 import { DragDropContext } from 'react-beautiful-dnd';
 import { useDispatch, useSelector } from 'react-redux';
 import { USER_APPS_SUCCESS } from '../constants/appConstants';
@@ -12,7 +11,7 @@ const DragDropContextComponent = ({ children }) => {
   const { apps } = userApps;
 
   const onDragEnd = async (result) => {
-    const { destination, source, draggableId } = result;
+    const { destination, source } = result;
     if (!destination) return;
 
     if (
@@ -22,14 +21,6 @@ const DragDropContextComponent = ({ children }) => {
       return;
 
     let appsCopy = apps;
-
-    let moveData = {
-      sourceIndex: source.index,
-      destinationIndex: destination.index,
-      sourceList: source.droppableId,
-      destinationList: destination.droppableId,
-      appId: draggableId,
-    };
 
     if (destination.droppableId === source.droppableId) {
       let listName = destination.droppableId;

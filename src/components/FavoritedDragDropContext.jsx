@@ -1,5 +1,4 @@
 import React from 'react';
-import axios from 'axios';
 import { DragDropContext } from 'react-beautiful-dnd';
 import { useSelector, useDispatch } from 'react-redux';
 import { USER_APPS_SUCCESS } from '../constants/appConstants';
@@ -10,7 +9,7 @@ const FavoritedDragDropContext = ({ children }) => {
   const { apps } = userApps;
 
   const onDragEnd = async (result) => {
-    const { destination, source, draggableId } = result;
+    const { destination, source } = result;
     if (!destination) {
       return;
     }
@@ -20,12 +19,6 @@ const FavoritedDragDropContext = ({ children }) => {
     ) {
       return;
     }
-
-    let moveData = {
-      sourceIndex: source.index,
-      destinationIndex: destination.index,
-      appId: draggableId,
-    };
 
     let appsCopy = apps;
 
