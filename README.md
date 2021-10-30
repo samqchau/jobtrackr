@@ -40,6 +40,7 @@ Description: This version of JobTrackr was developed to explore the incremental 
   * Deployment: Would have to use something like AWS(ECS) for the multiple Docker containers.
 
 **Checkout the repository here *[JobTrackr - Server & Database](https://github.com/samqchau/job-tracker)***
+
 *Clone & run docker-compose up*
 
 ## Details
