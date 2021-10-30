@@ -2,9 +2,7 @@
 JobTrackr is a personal, individual project that empowers users to track their applications during the job hunt. 
 Feel free to explore the code, reference it, and clone it for examples of how to use React and Redux.
 
-<figure class="video_container">
-  <iframe src="https://www.youtube.com/watch?v=ACxvittA_ME" frameborder="0" allowfullscreen="false"> </iframe>
-</figure>
+https://user-images.githubusercontent.com/67344952/139521521-1d308184-0034-49e9-9fda-527f62da1abf.mp4
 
 ## Core Features
 - Update and delete applications all in a single view.
