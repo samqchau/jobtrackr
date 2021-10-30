@@ -26,9 +26,9 @@ https://user-images.githubusercontent.com/67344952/139521521-1d308184-0034-49e9-
 ## Usage
 Requirements: Git, Node, and npm or yarn.
 
-1. git clone https://github.com/samqchau/jobtrackr.git
-2. Navigate to the directory
-3. npm start
+* git clone https://github.com/samqchau/jobtrackr.git
+* Navigate to the directory
+* npm start
 
 ## Purpose and Specifications
 **Two versions were developed** in tandum to explore the incremental increase of complexity when more system components are added to an application.
