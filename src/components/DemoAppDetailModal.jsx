@@ -144,7 +144,6 @@ const DemoAppDetailModal = ({ show, handleClose, app, setApps }) => {
             <Form.Control
               autoComplete='off'
               className='capitalize'
-              autoComplete='off'
               value={company}
               placeholder='+ Company Name'
               onChange={(e) => {
