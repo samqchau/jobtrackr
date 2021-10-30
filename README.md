@@ -69,7 +69,7 @@ Description: This version of JobTrackr was developed to explore the incremental 
    
 </div> 
  
-   #### Database Schemas
+   ### Database Schemas
 
 
    #### Protected Paths
