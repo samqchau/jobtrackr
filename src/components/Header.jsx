@@ -8,10 +8,16 @@ const Header = () => {
   return (
     <Container fluid className='header-background'>
       <Container className='header-container' fluid>
-        <div className='header-left'>
+        <a
+          className='header-left'
+          href='https://samqchau.github.io/portfolio-v1.0.0/'
+          target='_blank'
+          rel='noreferrer'
+          title="Sam Chau's portfolio"
+        >
           <Logo />
           <span className='header-logo-text'>JobTrackr</span>
-        </div>
+        </a>
         <div className='header-center'></div>
         <div className='header-right'>
           <OpenFavorites />
