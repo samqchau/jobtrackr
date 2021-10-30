@@ -59,11 +59,11 @@ Description: This version of JobTrackr was developed to explore the incremental 
    | Resource | Route | HTTP Verbs |
    | --- | --- | --- |
    | Users | /user/login | POST |
-    | | | |
+   | --- | --- | --- |
    | Applications | /api/apps | GET, POST |
    |  | app/:id | PUT, DELETE |
    |  | app/:id/notes | GET, POST |
-     | | | |
+   | --- | --- | --- |
    | Notes | /api/notes |  |
    |  | /api/notes/:id | PUT, DELETE |
    
