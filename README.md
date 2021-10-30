@@ -4,7 +4,7 @@ Feel free to explore the code, reference it, and clone it for examples of how to
 
 <figure class="video_container">
   <video controls="false" allowfullscreen="false" loop="true" autoplay="true" muted="true" poster="https://github.com/samqchau/portfolio-v1.0.0/blob/master/public/pngs/jt-poster.jpg?raw=true">
-    <source src="public/assets/jobtrackr_sample.mp4" type="video/mp4">
+    <source src="jobtrackr/public/assets/jobtrackr_sample.mp4" type="video/mp4">
   </video>
 </figure>
 
