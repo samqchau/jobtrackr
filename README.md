@@ -3,10 +3,10 @@ JobTrackr is a personal, individual project that empowers users to track their a
 Feel free to explore the code, reference it, and clone it for examples of how to use React and Redux.
 
 ### Core Features
-Update and delete applications all in a single view.
-Save important notes for each application with no clutter.
-Select preferred colors or color code applications.
-Drag & Drop applications between multiple lists to quickly organize.
+- Update and delete applications all in a single view.
+- Save important notes for each application with no clutter.
+- Select preferred colors or color code applications.
+- Drag & Drop applications between multiple lists to quickly organize.
 
 ### Description
 **Two versions were developed** in tandum to explore the increasing complexity when more system components are added to an application.
@@ -14,12 +14,12 @@ Both versions have the same core features which are described above. However, th
 
 
 1. This repository
-Description: This version of JobTrackr was developed to demonstrate the power and utility of standalone Single Page Applications (SPA)s. It is entirely a client side application where all the data is stored in the client's Local Storage.
+..* Description: This version of JobTrackr was developed to demonstrate the power and utility of standalone Single Page Applications (SPA)s. It is entirely a client side application where all the data is stored in the client's Local Storage.
 
-Frontend: React & Redux
-Server: None
-Storage: Local Storage (Browser)
-Version Control & Deployment: Github
+..* Frontend: React & Redux
+..* Server: None
+..* Storage: Local Storage (Browser)
+    Version Control & Deployment: Github
 
 Checkout the live version here - [JobTrackr - LocalStorage](https://samqchau.github.io/jobtrackr/)
 
