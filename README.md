@@ -8,6 +8,7 @@ https://user-images.githubusercontent.com/67344952/139521521-1d308184-0034-49e9-
 
 ## Table of Contents
   * **Core Features**
+  * **Usage**
   * **Purpose and Specifications**
   * **Details**
   * **After Thoughts**
@@ -17,6 +18,13 @@ https://user-images.githubusercontent.com/67344952/139521521-1d308184-0034-49e9-
 - Update and delete applications all in a single view.
 - Save important notes for each application with no clutter.
 - Select preferred colors or color code applications.
+
+## Usage
+Requirements: Git, Node, and npm or yarn.
+
+- run 'git clone https://github.com/samqchau/jobtrackr.git'
+- Navigate to the directory
+- run 'npm start'
 
 ## Purpose and Specifications
 **Two versions were developed** in tandum to explore the incremental increase of complexity when more system components are added to an application.
@@ -40,8 +48,6 @@ Description: This version of JobTrackr was developed to explore the incremental 
   * Deployment: Would have to use something like AWS(ECS) for the multiple Docker containers.
 
 **Checkout the repository here *[JobTrackr - Server & Database](https://github.com/samqchau/job-tracker)***
-
-*Clone & run docker-compose up*
 
 ## Details
    #### API Design
