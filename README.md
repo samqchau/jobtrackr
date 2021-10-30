@@ -43,10 +43,16 @@ Description: This version of JobTrackr was developed to explore the incremental 
 *Clone & run docker-compose up*
 
 ## Details
-   ### API DESIGN
-   ### Database Schemas
-   ### Protected Paths
+   #### API Design
+   #### Database Schemas
+   #### Protected Paths
 
 ## After Thoughts
-   ### 1. The Tradeoffs of using a database
-      #### Benefits
+   #### The Tradeoffs of using a database
+    The primary benefit of using a database is being able to host a database on the internet. This way, users can access their precious data as long as they have internet access. In contrast, the live demo (Local Storage version) of JobTrackr stores all data using the browser's local storage. If a user had the single page application, the user could use the application without internet access.
+    
+    For most enterprise applications, it is a fundamental requirement of the product that the data must be accessible everywhere. Because there is physical distance between the user's machine and the database machine, the data takes more time traveling across the network. In a simple app like JobTrackr, users will anticipate updates to happen immediately. In addition, job application data is not the most sensitve data. Therefore I opted for *eventual consistency* in both versions. If one of the applications is out of place or one note is missing, it's not the end of the world. However, for highly sensitive information, *absolute consistency* is a must. 
+    
+    This manifested clearly in the client side application when managing Redux state. Should the Redux state have been updated first for maximum responsiveness or should the application wait until it recieves a response from the server? In hindsight, as it often is, a hybrid approach would've been more appropriate. Redux state could've been immediately updated to reflect that an HTTP request was sent. A loader would be displayed until the application recives a response.
+    
+   #### Database Selection
