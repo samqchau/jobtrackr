@@ -54,34 +54,14 @@ Description: This version of JobTrackr was developed to explore the incremental 
    The primary resources stored by the JobTrackr database are minimal User data, Appl data, and Note data.
    Each of these resources is accessible at their respective API endpoints.
    
-   | Resource | Route | HTTP Verbs |
-   | Users | /api/user | ---- |
+   | Resource | Route | HTTP Verbs 
+   | Users | /api/user | ---- 
    | ---- | /login | POST
-   | ---- | ---- | ---- |
-   
-   Users
-   /api/user
-   
-   |
-   
-   -- /login -- POST
-   
-   Applications
-   /api/apps -- GET, POST, PUT, DELETE
-   
-   |
-   
-   -- /:id -- GET, PUT, DELETE
-    
-   -- /:id/notes -- GET, PUT
-    
-    
-   Notes
-   /api/notes
-   
-   |
-   
-   -- /:id -- PUT, DELETE
+   | Applications | /api/apps | GET, POST, PUT, DELETE
+   | --- | /:id | GET, PUT, DELETE
+   | --- | /:id/notes | GET, POST
+   | Notes | /api/notes | ---
+   | --- | /api/notes/:id | PUT, DELETE
    
    #### Database Schemas
    #### Protected Paths
