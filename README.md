@@ -7,17 +7,17 @@ Feel free to explore the code, reference it, and clone it for examples of how to
 https://user-images.githubusercontent.com/67344952/139521521-1d308184-0034-49e9-9fda-527f62da1abf.mp4
 
 ## Table of Contents
-  * **Core Features**
-  * **Usage**
-  * **Purpose and Specifications**
-  * **Details**
-  * **After Thoughts**
+  **Core Features**
+  **Usage**
+  **Purpose and Specifications**
+  **Details**
+  **After Thoughts**
 
 ## Core Features
-Drag & Drop applications between multiple lists to quickly organize.
-Update and delete applications all in a single view.
-Save important notes for each application with no clutter.
-Select preferred colors or color code applications.
+* Drag & Drop applications between multiple lists to quickly organize.
+* Update and delete applications all in a single view.
+* Save important notes for each application with no clutter.
+* Select preferred colors or color code applications.
 
 ## Usage
 Requirements: Git, Node, and npm or yarn.
