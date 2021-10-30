@@ -8,9 +8,13 @@ https://user-images.githubusercontent.com/67344952/139521521-1d308184-0034-49e9-
 
 ## Table of Contents
   **Core Features**
+  
   **Usage**
+  
   **Purpose and Specifications**
+  
   **Details**
+  
   **After Thoughts**
 
 ## Core Features
