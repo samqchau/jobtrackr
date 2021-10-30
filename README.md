@@ -14,12 +14,12 @@ Both versions have the same core features which are described above. However, th
 
 
 1. This repository
-..* Description: This version of JobTrackr was developed to demonstrate the power and utility of standalone Single Page Applications (SPA)s. It is entirely a client side application where all the data is stored in the client's Local Storage.
-
-..* Frontend: React & Redux
-..* Server: None
-..* Storage: Local Storage (Browser)
-    Version Control & Deployment: Github
+Description: This version of JobTrackr was developed to demonstrate the power and utility of standalone Single Page Applications (SPA)s. It is entirely a client side application where all the data is stored in the client's Local Storage.
+⋅⋅* Unordered sub-list. 
+⋅⋅* Frontend: React & Redux
+⋅⋅* Server: None
+⋅⋅* Storage: Local Storage (Browser)
+⋅⋅* Version Control & Deployment: Github
 
 Checkout the live version here - [JobTrackr - LocalStorage](https://samqchau.github.io/jobtrackr/)
 
