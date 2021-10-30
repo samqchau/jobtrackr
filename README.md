@@ -3,9 +3,7 @@ JobTrackr is a personal, individual project that empowers users to track their a
 Feel free to explore the code, reference it, and clone it for examples of how to use React and Redux.
 
 <figure class="video_container">
-  <video controls="false" allowfullscreen="false" loop="true" autoplay="true" muted="true" poster="https://github.com/samqchau/portfolio-v1.0.0/blob/master/public/pngs/jt-poster.jpg?raw=true">
-    <source src="jobtrackr/public/assets/jobtrackr_sample.mp4" type="video/mp4">
-  </video>
+  <iframe src="https://www.youtube.com/watch?v=ACxvittA_ME" frameborder="0" allowfullscreen="false"> </iframe>
 </figure>
 
 ## Core Features
