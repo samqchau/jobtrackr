@@ -56,18 +56,26 @@ Description: This version of JobTrackr was developed to explore the incremental 
    
    Users
    /api/user
+   
    |
+   
    -- /login -- POST
    
    Applications
    /api/apps -- GET, POST, PUT, DELETE
+   
    |
-    -- /:id -- GET, PUT, DELETE
-    -- /:id/notes -- GET, PUT
+   
+   -- /:id -- GET, PUT, DELETE
+    
+   -- /:id/notes -- GET, PUT
+    
     
    Notes
    /api/notes
+   
    |
+   
    -- /:id -- PUT, DELETE
    
    #### Database Schemas
