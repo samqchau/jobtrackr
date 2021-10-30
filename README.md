@@ -51,7 +51,7 @@ Description: This version of JobTrackr was developed to explore the incremental 
 
 ## Details
    #### API Design
-   The primary resources stored by the JobTrackr database are minimal User data, Appl data, and Note data.
+   The primary resources stored by the JobTrackr database are minimal user, application, and note data.
    Each of these resources is accessible at their respective API endpoints.
 
 <div align="center" style="width: 100%; color: blue;">
@@ -70,6 +70,8 @@ Description: This version of JobTrackr was developed to explore the incremental 
 </div> 
  
    #### Database Schemas
+
+
    #### Protected Paths
 
 ## After Thoughts
