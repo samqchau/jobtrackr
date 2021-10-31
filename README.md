@@ -74,7 +74,7 @@ Description: This version of JobTrackr was developed to explore the incremental 
 </div> 
  
    ### Database Schemas
-   | Resource | Column | Data Type | Default | Constraints |
+   | Table | Column | Data Type | Default | Constraints |
    | --- | --- | :---: | :---: | :---: |
    | Applications | id | uuid | uuid_generate_v4() | NOT NULL |
    | | user_id | VARCHAR | --- | NOT NULL, FOREIGN KEY |
@@ -83,7 +83,9 @@ Description: This version of JobTrackr was developed to explore the incremental 
    | | last_updated | timestamp | CURRENT_TIMESTAMP | |
    | | index | integer | --- | NOT NULL |
    | | fav_index | integer | --- | NOT NULL |
-   | |                 |             |                       |
+
+   | Table | Column | Data Type | Default | Constraints |
+   | --- | --- | :---: | :---: | :---: |
    | Notes | id | uuid | uuid_generate_v4() | NOT_NULL |
    | | application_id | uuid | | NOT NULL, FOREIGN KEY |
    | | created_on | timestamp | CURRENT_TIMESTAMP | NOT NULL |
