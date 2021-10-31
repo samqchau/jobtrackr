@@ -58,10 +58,10 @@ Description: This version of JobTrackr was developed to explore the incremental 
    The primary resources stored by the JobTrackr database are minimal user, application, and note data.
    Each of these resources is accessible at their respective API endpoints.
 
-<div align="center" style="width: 100%; color: blue;">
+<div align="center">
  
    | Resource | Route | HTTP Verbs |
-   | --- | --- | --- |
+   | <div align="center">---</div> | --- | --- |
    | Users | /user/login | POST |
    | --- | --- | --- |
    | Applications | /api/apps | GET, POST |
