@@ -71,7 +71,7 @@ Description: This version of JobTrackr was developed to explore the incremental 
    
 </div> 
  
-   ### Database Schemas
+   #### Database Schemas
 <div align="center">
  
    | Table | Column | Data Type | Default | Constraints |
@@ -85,6 +85,7 @@ Description: This version of JobTrackr was developed to explore the incremental 
    | | last_updated | timestamp | CURRENT_TIMESTAMP | |
    | | index | integer | --- | NOT NULL |
    | | fav_index | integer | --- | NOT NULL |
+   | | color | VARCHAR | 'white' | |
    | Notes | id | uuid | uuid_generate_v4( ) | PRIMARY KEY, NOT_NULL |
    | | application_id | uuid | | NOT NULL, FOREIGN KEY |
    | | created_on | timestamp | CURRENT_TIMESTAMP | NOT NULL |
@@ -94,6 +95,42 @@ Description: This version of JobTrackr was developed to explore the incremental 
 </div> 
 
    #### Protected Paths
+   In version 2, Google Firebase is used for authentication. When the client authenticates through Firebase, Firebase returns a lot of information about the user. In this use case, only a user id and email are passed to the server to store in the Postgres database.
+   
+   
+  ```
+  import jwt from 'jsonwebtoken';
+  const generateToken = (id) => {
+     return jwt.sign({ id }, process.env.JWT_SECRET, { expiresIn: '30d' });
+  };
+  
+  
+  
+  export const loginFirebaseUser = expressAsyncHandler(async (req, res) => {
+  try {
+    const { email, uid } = req.body;
+    let user = await pool.query('SELECT * FROM users WHERE email = $1', [
+      email,
+    ]);
+    
+    ...
+    
+    if (user) {
+      user.token = generateToken(user.id);
+      res.json(user);
+    } else {
+      //Save user in database
+      
+      ...
+      
+    }
+  } 
+  ...
+   ```
+   The user id is salted and used to generate a token (JWT) that is passed back to the user. 
+   
+   
+   By using Express middleware, protected routes were implemented where users can only modify their data if they present back the valid token.
 
 ## After Thoughts
    #### The Tradeoffs of using a database
