@@ -97,8 +97,8 @@ Description: This version of JobTrackr was developed to explore the incremental 
    #### Protected Paths
    In version 2, Google Firebase is used for authentication. When the client authenticates through Firebase, Firebase returns a lot of information about the user. In this use case, only a user id and email are passed to the server to store in the Postgres database.
    
-   
-  ```
+The user id is salted and used to generate a token (JWT) that is passed back to the user. 
+```
   import jwt from 'jsonwebtoken';
   const generateToken = (id) => {
      return jwt.sign({ id }, process.env.JWT_SECRET, { expiresIn: '30d' });
@@ -120,15 +120,12 @@ Description: This version of JobTrackr was developed to explore the incremental 
       res.json(user);
     } else {
       //Save user in database
-      
-      ...
-      
+      user.token = generateToken(user.id)
+      res.json(user;
     }
   } 
   ...
-   ```
-   The user id is salted and used to generate a token (JWT) that is passed back to the user. 
-   
+```
    
    By using Express middleware, protected routes were implemented where users can only modify their data if they present back the valid token.
 
