@@ -72,9 +72,15 @@ Description: This version of JobTrackr was developed to explore the incremental 
 </div> 
  
    ### Database Schemas
+
    | Table | Column | Data Type | Default | Constraints |
    | --- | --- | :---: | :---: | :---: |
-   | Applications | id | uuid | uuid_generate_v4() | NOT NULL |
+   | User | id | VARCHAR | | PRIMARY KEY,  NOT NULL |
+   | | email | VARCHAR | | NOT NULL |
+
+   | Table | Column | Data Type | Default | Constraints |
+   | --- | --- | :---: | :---: | :---: |
+   | Applications | id | uuid | uuid_generate_v4( ) | PRIMARY KEY, NOT NULL |
    | | user_id | VARCHAR | --- | NOT NULL, FOREIGN KEY |
    | | company_name | VARCHAR(20) | --- | NOT NULL |
    | | date_applied | timestamp | CURRENT_TIMESTAMP | |
@@ -84,7 +90,7 @@ Description: This version of JobTrackr was developed to explore the incremental 
 
    | Table | Column | Data Type | Default | Constraints |
    | --- | --- | :---: | :---: | :---: |
-   | Notes | id | uuid | uuid_generate_v4() | NOT_NULL |
+   | Notes | id | uuid | uuid_generate_v4( ) | PRIMARY KEY, NOT_NULL |
    | | application_id | uuid | | NOT NULL, FOREIGN KEY |
    | | created_on | timestamp | CURRENT_TIMESTAMP | NOT NULL |
    | | last_updated | timestamp | CURRENT_TIMESTAMP | |
