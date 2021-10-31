@@ -76,7 +76,7 @@ Description: This version of JobTrackr was developed to explore the incremental 
  
    | Table | Column | Data Type | Default | Constraints |
    | --- | --- | :---: | :---: | :---: |
-   | User | id | VARCHAR | | PRIMARY KEY,  NOT NULL |
+   | Users | id | VARCHAR | | PRIMARY KEY,  NOT NULL |
    | | email | CITEXT | | NOT NULL, UNIQUE |
    | Applications | id | uuid | uuid_generate_v4( ) | PRIMARY KEY, NOT NULL |
    | | user_id | VARCHAR | --- | NOT NULL, FOREIGN KEY |
