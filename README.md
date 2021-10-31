@@ -98,6 +98,7 @@ Description: This version of JobTrackr was developed to explore the incremental 
    | | content | text | | NOT NULL | 
  
 </div> 
+
    #### Protected Paths
 
 ## After Thoughts
