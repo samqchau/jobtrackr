@@ -69,12 +69,20 @@ Description: This version of JobTrackr was developed to explore the incremental 
    |  | app/:id/notes | GET, POST |
    | --- | --- | --- |
    | Notes | /api/notes |  |
-   |  | /api/notes/:id | PUT, DELETE |
+   |  | /note/:id | PUT, DELETE |
    
 </div> 
  
    ### Database Schemas
-
+   | Resource | Column | Data Type | Default | Constraints |
+   | --- | --- | --- | --- | --- |
+   | Applications | id | uuid | uuid_generate_v4() | NOT NULL |
+   | | user_id | VARCHAR | --- | NOT NULL FOREIGN KEY |
+   | | company_name | VARCHAR(20) | --- | NOT NULL |
+   | | date_applied | timestamp | CURRENT_TIMESTAMP | |
+   | | last_updated | timestamp | CURRENT_TIMESTAMP | |
+   | | index | integer | --- | NOT NULL |
+   | | fav_index | integer | --- | NOT NULL |
 
    #### Protected Paths
 
