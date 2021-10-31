@@ -72,7 +72,7 @@ Description: This version of JobTrackr was developed to explore the incremental 
 </div> 
  
    ### Database Schemas
-
+<div align="center">
    | Table | Column | Data Type | Default | Constraints |
    | --- | --- | :---: | :---: | :---: |
    | User | id | VARCHAR | | PRIMARY KEY,  NOT NULL |
@@ -95,7 +95,7 @@ Description: This version of JobTrackr was developed to explore the incremental 
    | | created_on | timestamp | CURRENT_TIMESTAMP | NOT NULL |
    | | last_updated | timestamp | CURRENT_TIMESTAMP | |
    | | content | text | | NOT NULL | 
-
+</div> 
    #### Protected Paths
 
 ## After Thoughts
