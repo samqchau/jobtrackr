@@ -61,13 +61,13 @@ Description: This version of JobTrackr was developed to explore the incremental 
 <div align="center">
  
    | Resource | Route | HTTP Verbs |
-   | --- | :---: | :---: |
-   | Users | /user/login | POST |
-   | --- | --- | --- |
+   |    ---   | :---: |   :---:    |
+   |  Users   | /user/login | POST |
+   |       |             |         |
    | Applications | /api/apps | GET, POST |
    |  | app/:id | PUT, DELETE |
    |  | app/:id/notes | GET, POST |
-   | --- | --- | --- |
+   |  |  |  |
    | Notes | /api/notes |  |
    |  | /note/:id | PUT, DELETE |
    
@@ -83,6 +83,12 @@ Description: This version of JobTrackr was developed to explore the incremental 
    | | last_updated | timestamp | CURRENT_TIMESTAMP | |
    | | index | integer | --- | NOT NULL |
    | | fav_index | integer | --- | NOT NULL |
+   | |                 |             |                       |
+   | Notes | id | uuid | uuid_generate_v4() | NOT_NULL |
+   | | application_id | uuid | | NOT NULL, FOREIGN KEY |
+   | | created_on | timestamp | CURRENT_TIMESTAMP | NOT NULL |
+   | | last_updated | timestamp | CURRENT_TIMESTAMP | |
+   | | content | text | | NOT NULL | 
 
    #### Protected Paths
 
