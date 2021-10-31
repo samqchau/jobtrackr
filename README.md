@@ -99,8 +99,9 @@ Description: This version of JobTrackr was developed to explore the incremental 
    
 The user id is salted and used to generate a token (JWT) that is passed back to the user. 
 ```
+  import pool from '../database/db.js';
   import jwt from 'jsonwebtoken';
-  
+  ...
   const generateToken = (id) => {
      return jwt.sign({ id }, process.env.JWT_SECRET, { expiresIn: '30d' });
   };
@@ -117,7 +118,7 @@ The user id is salted and used to generate a token (JWT) that is passed back to 
       res.json(user);
     } else {
       //Save user in database
-      user.token = generateToken(user.id)
+      user.token = generateToken(user.id);
       res.json(user);
     }
   } ...
