@@ -61,7 +61,7 @@ Description: This version of JobTrackr was developed to explore the incremental 
 <div align="center">
  
    | Resource | Route | HTTP Verbs |
-   | <div align="center">---</div> | --- | --- |
+   | --- | --- | --- |
    | Users | /user/login | POST |
    | --- | --- | --- |
    | Applications | /api/apps | GET, POST |
@@ -75,7 +75,7 @@ Description: This version of JobTrackr was developed to explore the incremental 
  
    ### Database Schemas
    | Resource | Column | Data Type | Default | Constraints |
-   | --- | --- | --- | --- | --- |
+   | --- | --- | :---: | --- | --- |
    | Applications | id | uuid | uuid_generate_v4() | NOT NULL |
    | | user_id | VARCHAR | --- | NOT NULL FOREIGN KEY |
    | | company_name | VARCHAR(20) | --- | NOT NULL |
