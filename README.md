@@ -77,7 +77,7 @@ Description: This version of JobTrackr was developed to explore the incremental 
    | Table | Column | Data Type | Default | Constraints |
    | --- | --- | :---: | :---: | :---: |
    | User | id | VARCHAR | | PRIMARY KEY,  NOT NULL |
-   | | email | VARCHAR | | NOT NULL |
+   | | email | CITEXT | | NOT NULL, UNIQUE |
 
    | Table | Column | Data Type | Default | Constraints |
    | --- | --- | :---: | :---: | :---: |
