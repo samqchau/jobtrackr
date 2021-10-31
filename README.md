@@ -100,11 +100,10 @@ Description: This version of JobTrackr was developed to explore the incremental 
 The user id is salted and used to generate a token (JWT) that is passed back to the user. 
 ```
   import jwt from 'jsonwebtoken';
+  
   const generateToken = (id) => {
      return jwt.sign({ id }, process.env.JWT_SECRET, { expiresIn: '30d' });
   };
-  
-  
   
   export const loginFirebaseUser = expressAsyncHandler(async (req, res) => {
   try {
@@ -112,19 +111,16 @@ The user id is salted and used to generate a token (JWT) that is passed back to 
     let user = await pool.query('SELECT * FROM users WHERE email = $1', [
       email,
     ]);
-    
     ...
-    
     if (user) {
       user.token = generateToken(user.id);
       res.json(user);
     } else {
       //Save user in database
       user.token = generateToken(user.id)
-      res.json(user;
+      res.json(user);
     }
-  } 
-  ...
+  } ...
 ```
    
    By using Express middleware, protected routes were implemented where users can only modify their data if they present back the valid token.
