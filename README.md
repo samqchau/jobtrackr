@@ -34,7 +34,6 @@ Feel free to explore the code, reference it, and clone it for examples of how to
 <div align="center">
 
 ## Usage
-Requirements: Git, Node, and npm or yarn.
 
 </div>
  
@@ -43,6 +42,8 @@ Requirements: Git, Node, and npm or yarn.
 * npm start
 
 <div align="center">
+
+Requirements: Git, Node, and npm or yarn.
 
 ## Purpose and Specifications
  
