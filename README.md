@@ -30,7 +30,7 @@ Requirements: Git, Node, and npm or yarn.
 **Two versions were developed** in tandum to explore the incremental increase of complexity when more system components are added to an application.
 Both versions have the same core features which are described above. However, the process and location of which the data is stored are distinct. The differences are listed below.
 
-### Version 1 - Local Storage (current respository)
+### Version 1 - Single Tiered App (current respository)
 Description: This version of JobTrackr was developed to demonstrate the power and utility of standalone Single Page Applications (SPA)s. It is entirely a client side application where all the data is stored in the client's Local Storage.
   * Frontend: React & Redux
   * Server: None
@@ -41,7 +41,7 @@ Description: This version of JobTrackr was developed to demonstrate the power an
 
 **Checkout the live demo here - *[JobTrackr - LocalStorage](https://samqchau.github.io/jobtrackr/)***
 
-### Version 2 - w/ Database
+### Version 2 - Three Tiered App
 Description: This version of JobTrackr was developed to explore the incremental complexity added from adapting the standalone SPA architecture to a client-server architecture with a single database.
   * Frontend: React & Redux
   * Server: Node (Express)
@@ -110,3 +110,7 @@ Description: This version of JobTrackr was developed to explore the incremental 
    JobTrackr stores job application data. The data is not analyzed or parsed further. It's a simple application, but hypothetically it could be scaled. With the current table schemas users, applications, and notes are all stored in separate tables. When a user makes a request to find their job application data, in the best case, Postgres SELECTs all applications by user.id, then has to JOIN all the notes to applications. All these tables could be sharded by user.id, but with the current use cases, a document or noSQL database would be a better option.
    
    In these types of databases, the data that is accessed together is stored together. There would be less disk reads when all the users' applications, and those applications' notes are all stored together physically. The schema is more flexible, and these types of databases are intrinsically more horizontally scalable. Both of these qualities are more aligned with the current specifications of JobTrackr.
+   
+   #### A Discussion of the differences between single tiered and three tiered applications.
+   
+   
