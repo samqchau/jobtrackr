@@ -28,7 +28,7 @@ Requirements: Git, Node, and npm or yarn.
 
 ## Purpose and Specifications
 **Two versions were developed** in tandum to explore the incremental increase of complexity when more system components are added to an application.
-Both versions have the same core features which are described above. However, the process and location of which the data is stored are distinct. The exact *specification differences are listed below*.
+Both versions have the same core features which are described above. However, the process and location of which the data is stored are distinct. The differences are listed below.
 
 ### Version 1 - Local Storage (current respository)
 Description: This version of JobTrackr was developed to demonstrate the power and utility of standalone Single Page Applications (SPA)s. It is entirely a client side application where all the data is stored in the client's Local Storage.
@@ -36,6 +36,8 @@ Description: This version of JobTrackr was developed to demonstrate the power an
   * Server: None
   * Storage: Local Storage (Browser)
   * Version Control & Deployment: Github
+
+<img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB"/> <img src="https://img.shields.io/badge/Redux-593D88?style=for-the-badge&logo=redux&logoColor=white"/> <img src="https://img.shields.io/badge/npm-CB3837?style=for-the-badge&logo=npm&logoColor=white" /> <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white"/> <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" />
 
 **Checkout the live demo here - *[JobTrackr - LocalStorage](https://samqchau.github.io/jobtrackr/)***
 
@@ -46,6 +48,8 @@ Description: This version of JobTrackr was developed to explore the incremental 
   * Storage: Postgres
   * Version Control: Github
   * Deployment: Would have to use something like AWS(ECS) for the multiple Docker containers.
+
+<img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white"/> <img src="https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white"/> <img src="https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white"/> <img src="https://img.shields.io/badge/firebase-ffca28?style=for-the-badge&logo=firebase&logoColor=black"/> <img src="https://img.shields.io/badge/Docker-2CA5E0?style=for-the-badge&logo=docker&logoColor=white"/>
 
 **Checkout the repository here *[JobTrackr - Server & Database](https://github.com/samqchau/job-tracker)***
 
