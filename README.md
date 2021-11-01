@@ -10,7 +10,7 @@
   **[Details](https://github.com/samqchau/jobtrackr/blob/main/README.md#details)** |
   **[After Thoughts](https://github.com/samqchau/jobtrackr/blob/main/README.md#after-thoughts)**
 
-![jobtrackr_demo](https://user-images.githubusercontent.com/67344952/139654103-e5db5921-9863-4186-b29f-9009df625d8a.gif)
+![jobtrackr_demo](https://user-images.githubusercontent.com/67344952/139657832-04bd04c8-10b8-4777-96f0-f14d27d4a52d.gif)
 
 </div>
  
