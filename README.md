@@ -1,13 +1,6 @@
 <div align="center">
 
 # Jobtrackr
- 
-</div>
- 
-JobTrackr is a personal, individual project that empowers users to track their applications during the job hunt. 
-Feel free to explore the code, reference it, and clone it for examples of how to use React and Redux.
-
-<div align="center">
 
 **Checkout the live demo here - [JobTrackr - LocalStorage](https://samqchau.github.io/jobtrackr/)**
 
@@ -20,7 +13,14 @@ Feel free to explore the code, reference it, and clone it for examples of how to
   **[After Thoughts](https://github.com/samqchau/jobtrackr/blob/main/README.md#after-thoughts)**
 
 ![jobtrackr_demo](https://user-images.githubusercontent.com/67344952/139654103-e5db5921-9863-4186-b29f-9009df625d8a.gif)
+
+</div>
  
+JobTrackr is a personal, individual project that empowers users to track their applications during the job hunt. 
+Feel free to explore the code, reference it, and clone it for examples of how to use React and Redux.
+
+<div align="center">
+
 ## Core Features
  
 </div>
