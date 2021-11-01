@@ -92,9 +92,10 @@ Description: This version of JobTrackr was developed to explore the incremental 
 
 The primary resources stored by the JobTrackr database are minimal user, application, and note data.
 Each of these resources is accessible at their respective API endpoints.
- 
-   #### Database Schemas
+
 <div align="center">
+
+   #### Database Schemas
  
    | Table | Column | Data Type | Default | Constraints |
    | --- | --- | :---: | :---: | :---: |
@@ -113,21 +114,33 @@ Each of these resources is accessible at their respective API endpoints.
    | | created_on | timestamp | CURRENT_TIMESTAMP | NOT NULL |
    | | last_updated | timestamp | CURRENT_TIMESTAMP | |
    | | content | text | | NOT NULL | 
- 
-</div> 
 
    #### Protected Routes
+ 
+ </div> 
+ 
    In version 2, Google Firebase is used for authentication. When the client authenticates through Firebase, Firebase returns a lot of information about the user. In this use case, only a user id and email are passed to the server to store in the Postgres database. The user id is salted and used to generate a token (JWT) that is passed back to the user. Every request users make is validated by Express middleware. The middleware recieves the token and decodes it. If the token is valid, the the next middleware in the proper request cycle is called, otherwise the user recieves an error message.
 
+<div align="center">
+
 ## After Thoughts
+ 
    #### The Tradeoffs of using a database
+ 
+</div> 
+ 
    The primary benefit of using a database is being able to host a database on the internet. This way, users can access their precious data as long as they have internet access. In addition, replicas of the database could quickly replace the database machine if it failed. In contrast, the live demo (Local Storage version) of JobTrackr stores all data using the browser's local storage. If a user had the single page application, the user could use the application without internet access, but if the user's machine was destroyed, they would lose all their data.
     
    For most enterprise applications, fundamental requirements of the products specify the data must be accessible everywhere and cannot be lost. Nowadays, databases are used in some form in almost every application. A side effect of remote database usage is physical distance between the user's machine and the database machine. The data takes more time traveling across the network. In a simple app like JobTrackr, users will anticipate updates to happen immediately. In addition, job application data is not the most sensitve data. Therefore I opted for *eventual consistency* in both versions. If one of the applications is out of place or one note is missing, it's not the end of the world. However, for highly sensitive information, *absolute consistency* is a must. 
     
    This manifested clearly in the development of the client side managing Redux state. Should the Redux state have been updated first for maximum responsiveness or should the client application wait until it recieves a response from the server? In hindsight, as it often is, a hybrid approach would've been more appropriate. Redux state could've been immediately updated to reflect that an HTTP request was sent. A loader would be displayed until the application receives a response.
     
+<div align="center">
+    
    #### Database Type Selection
+
+</div> 
+ 
    PostGres was selected as the database used to support JobTrackr Version 2. It is a relational database that stores data in rows organized by tables. All the rows of one table are stored together on disk. One of the greatest advantages of using a relational database is the capability to write complex queries. This empowers engineers to build relational data that can be analyzed in trival to complex ways. In hindsight, I learned a ton about Postgres, but if JobTrackr was to scale, a relational database was the incorrect choice for the current design of JobTrackr. In a way, the design I opted for leveraged the worst parts of the way Postgres stores data, and neglected the best features.
    
    JobTrackr stores job application data. The data is not analyzed or parsed further. It's a simple application, but hypothetically it could be scaled. With the current table schemas users, applications, and notes are all stored in separate tables. When a user makes a request to find their job application data, in the best case, Postgres SELECTs all applications by user.id, then has to JOIN all the notes to applications. All these tables could be sharded by user.id, but with the current use cases, a document or noSQL database would be a better option.
