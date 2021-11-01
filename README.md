@@ -4,9 +4,6 @@ Feel free to explore the code, reference it, and clone it for examples of how to
 
 **Checkout the live demo here - [JobTrackr - LocalStorage](https://samqchau.github.io/jobtrackr/)**
 
-**Checkout my portfolio**
-[<img src="https://img.shields.io/badge/website-000000?style=for-the-badge&logo=About.me&logoColor=white" />](https://samqchau.github.io/portfolio/)
-
 https://user-images.githubusercontent.com/67344952/139521521-1d308184-0034-49e9-9fda-527f62da1abf.mp4
 
 ## Table of Contents
