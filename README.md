@@ -6,6 +6,9 @@ Feel free to explore the code, reference it, and clone it for examples of how to
 
 https://user-images.githubusercontent.com/67344952/139521521-1d308184-0034-49e9-9fda-527f62da1abf.mp4
 
+![jobtrackr_demo](https://user-images.githubusercontent.com/67344952/139654103-e5db5921-9863-4186-b29f-9009df625d8a.gif)
+
+
 ## Table of Contents
   **[Core Features](https://github.com/samqchau/jobtrackr/blob/main/README.md#core-features)** | 
   **[Usage](https://github.com/samqchau/jobtrackr/blob/main/README.md#usage)** | 
