@@ -41,9 +41,9 @@ Feel free to explore the code, reference it, and clone it for examples of how to
 * Navigate to the directory
 * npm start
 
-<div align="center">
-
 Requirements: Git, Node, and npm or yarn.
+
+<div align="center">
 
 ## Purpose and Specifications
  
