@@ -62,8 +62,7 @@ Description: This version of JobTrackr was developed to explore the incremental 
    | Applications | api/apps | GET, POST |
    |  | api/app/:id | PUT, DELETE |
    |  | api/app/:id/notes | GET, POST |
-   | Notes | api/notes |  |
-   |  | api/note/:id | PUT, DELETE |
+   | Notes | api/note/:id | PUT, DELETE |
    
 </div> 
  
