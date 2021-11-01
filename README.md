@@ -75,8 +75,13 @@ Description: This version of JobTrackr was developed to explore the incremental 
 
 **Checkout the repository here *[JobTrackr - Server & Database](https://github.com/samqchau/job-tracker)***
 
+<div align="center">
+
 ## Details
    #### API Design
+ 
+</div>
+ 
    The primary resources stored by the JobTrackr database are minimal user, application, and note data.
    Each of these resources is accessible at their respective API endpoints.
 
