@@ -30,6 +30,8 @@ Requirements: Git, Node, and npm or yarn.
 **Two versions were developed** in tandum to explore the incremental increase of complexity when more system components are added to an application.
 Both versions have the same core features which are described above. However, the process and location of which the data is stored are distinct. The exact *specification differences are listed below*.
 
+[<img src="https://img.shields.io/badge/website-000000?style=for-the-badge&logo=About.me&logoColor=white" />](https://samqchau.github.io/portfolio/)
+
 ### Version 1 - Local Storage (current respository)
 Description: This version of JobTrackr was developed to demonstrate the power and utility of standalone Single Page Applications (SPA)s. It is entirely a client side application where all the data is stored in the client's Local Storage.
   * Frontend: React & Redux
