@@ -2,7 +2,7 @@
 JobTrackr is a personal, individual project that empowers users to track their applications during the job hunt. 
 Feel free to explore the code, reference it, and clone it for examples of how to use React and Redux.
 
-**Checkout the live site here - [JobTrackr - LocalStorage](https://samqchau.github.io/jobtrackr/)**
+**Checkout the live demo here - [JobTrackr - LocalStorage](https://samqchau.github.io/jobtrackr/)**
 
 https://user-images.githubusercontent.com/67344952/139521521-1d308184-0034-49e9-9fda-527f62da1abf.mp4
 
@@ -41,7 +41,7 @@ Description: This version of JobTrackr was developed to demonstrate the power an
   * Storage: Local Storage (Browser)
   * Version Control & Deployment: Github
 
-**Checkout the live site here - *[JobTrackr - LocalStorage](https://samqchau.github.io/jobtrackr/)***
+**Checkout the live demo here - *[JobTrackr - LocalStorage](https://samqchau.github.io/jobtrackr/)***
 
 ### Version 2 - w/ Database
 Description: This version of JobTrackr was developed to explore the incremental complexity added from adapting the standalone SPA architecture to a client-server architecture with a single database.
@@ -94,37 +94,8 @@ Description: This version of JobTrackr was developed to explore the incremental 
  
 </div> 
 
-   #### Protected Paths
-   In version 2, Google Firebase is used for authentication. When the client authenticates through Firebase, Firebase returns a lot of information about the user. In this use case, only a user id and email are passed to the server to store in the Postgres database.
-   
-The user id is salted and used to generate a token (JWT) that is passed back to the user. 
-```
-  import pool from '../database/db.js';
-  import jwt from 'jsonwebtoken';
-  ...
-  const generateToken = (id) => {
-     return jwt.sign({ id }, process.env.JWT_SECRET, { expiresIn: '30d' });
-  };
-  
-  export const loginFirebaseUser = expressAsyncHandler(async (req, res) => {
-  try {
-    const { email, uid } = req.body;
-    let user = await pool.query('SELECT * FROM users WHERE email = $1', [
-      email,
-    ]);
-    ...
-    if (user) {
-      user.token = generateToken(user.id);
-      res.json(user);
-    } else {
-      //Save user in database
-      user.token = generateToken(user.id);
-      res.json(user);
-    }
-  } ...
-```
-   
-   By using Express middleware, protected routes were implemented where users can only modify their data if they present back the valid token.
+   #### Protected Routes
+   In version 2, Google Firebase is used for authentication. When the client authenticates through Firebase, Firebase returns a lot of information about the user. In this use case, only a user id and email are passed to the server to store in the Postgres database. The user id is salted and used to generate a token (JWT) that is passed back to the user. Every request users make is validated by Express middleware. The middleware recieves the token and decodes it. If the token is valid, the the next middleware in the proper request cycle is called, otherwise the user recieves an error message.
 
 ## After Thoughts
    #### The Tradeoffs of using a database
