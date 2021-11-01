@@ -4,6 +4,8 @@ Feel free to explore the code, reference it, and clone it for examples of how to
 
 **Checkout the live demo here - [JobTrackr - LocalStorage](https://samqchau.github.io/jobtrackr/)**
 
+<div align="center">
+
 ## Table of Contents
   **[Core Features](https://github.com/samqchau/jobtrackr/blob/main/README.md#core-features)** | 
   **[Usage](https://github.com/samqchau/jobtrackr/blob/main/README.md#usage)** | 
@@ -13,6 +15,8 @@ Feel free to explore the code, reference it, and clone it for examples of how to
 
 ![jobtrackr_demo](https://user-images.githubusercontent.com/67344952/139654103-e5db5921-9863-4186-b29f-9009df625d8a.gif)
 
+ </div>
+ 
 ## Core Features
 * Drag & Drop applications between multiple lists to quickly organize.
 * Update and delete applications all in a single view.
