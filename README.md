@@ -80,13 +80,6 @@ Description: This version of JobTrackr was developed to explore the incremental 
 ## Details
    #### API Design
  
-</div>
- 
-   The primary resources stored by the JobTrackr database are minimal user, application, and note data.
-   Each of these resources is accessible at their respective API endpoints.
-
-<div align="center">
- 
    | Resource | Route | HTTP Verbs |
    |    :---   | :--- |   :---:    |
    |  Users   | api/user/login | POST |
@@ -96,6 +89,9 @@ Description: This version of JobTrackr was developed to explore the incremental 
    | Notes | api/note/:id | PUT, DELETE |
    
 </div> 
+
+The primary resources stored by the JobTrackr database are minimal user, application, and note data.
+Each of these resources is accessible at their respective API endpoints.
  
    #### Database Schemas
 <div align="center">
