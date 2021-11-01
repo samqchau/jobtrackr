@@ -7,14 +7,10 @@ Feel free to explore the code, reference it, and clone it for examples of how to
 https://user-images.githubusercontent.com/67344952/139521521-1d308184-0034-49e9-9fda-527f62da1abf.mp4
 
 ## Table of Contents
-  **[Core Features](https://github.com/samqchau/jobtrackr/blob/main/README.md#core-features)**
-  
-  **[Usage](https://github.com/samqchau/jobtrackr/blob/main/README.md#usage)**
-  
-  **[Purpose and Specifications](https://github.com/samqchau/jobtrackr/blob/main/README.md#purpose-and-specifications)**
-  
-  **[Details](https://github.com/samqchau/jobtrackr/blob/main/README.md#details)**
-  
+  **[Core Features](https://github.com/samqchau/jobtrackr/blob/main/README.md#core-features)** | 
+  **[Usage](https://github.com/samqchau/jobtrackr/blob/main/README.md#usage)** | 
+  **[Purpose and Specifications](https://github.com/samqchau/jobtrackr/blob/main/README.md#purpose-and-specifications)** | 
+  **[Details](https://github.com/samqchau/jobtrackr/blob/main/README.md#details)** |
   **[After Thoughts](https://github.com/samqchau/jobtrackr/blob/main/README.md#after-thoughts)**
 
 ## Core Features
