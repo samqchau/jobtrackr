@@ -1,6 +1,6 @@
-<div align="center">
-
 # Jobtrackr
+
+<div align="center">
 
 ## Table of Contents
  
