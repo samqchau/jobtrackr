@@ -9,13 +9,13 @@ https://user-images.githubusercontent.com/67344952/139521521-1d308184-0034-49e9-
 ## Table of Contents
   **[Core Features](https://github.com/samqchau/jobtrackr/blob/main/README.md#core-features)**
   
-  **Usage**
+  **[Usage](https://github.com/samqchau/jobtrackr/blob/main/README.md#usage)**
   
-  **Purpose and Specifications**
+  **[Purpose and Specifications](https://github.com/samqchau/jobtrackr/blob/main/README.md#purpose-and-specifications)**
   
-  **Details**
+  **[Details](https://github.com/samqchau/jobtrackr/blob/main/README.md#details)**
   
-  **After Thoughts**
+  **[After Thoughts](https://github.com/samqchau/jobtrackr/blob/main/README.md#after-thoughts)**
 
 ## Core Features
 * Drag & Drop applications between multiple lists to quickly organize.
