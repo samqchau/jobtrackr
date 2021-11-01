@@ -1,10 +1,10 @@
+<div align="center">
+
 # Jobtrackr
 JobTrackr is a personal, individual project that empowers users to track their applications during the job hunt. 
 Feel free to explore the code, reference it, and clone it for examples of how to use React and Redux.
 
 **Checkout the live demo here - [JobTrackr - LocalStorage](https://samqchau.github.io/jobtrackr/)**
-
-<div align="center">
 
 ## Table of Contents
   **[Core Features](https://github.com/samqchau/jobtrackr/blob/main/README.md#core-features)** | 
@@ -14,8 +14,6 @@ Feel free to explore the code, reference it, and clone it for examples of how to
   **[After Thoughts](https://github.com/samqchau/jobtrackr/blob/main/README.md#after-thoughts)**
 
 ![jobtrackr_demo](https://user-images.githubusercontent.com/67344952/139654103-e5db5921-9863-4186-b29f-9009df625d8a.gif)
-
- </div>
  
 ## Core Features
 * Drag & Drop applications between multiple lists to quickly organize.
@@ -30,6 +28,8 @@ Requirements: Git, Node, and npm or yarn.
 * Navigate to the directory
 * npm start
 
+</div>
+ 
 ## Purpose and Specifications
 **Two versions were developed** in tandum to explore the incremental increase of complexity when more system components are added to an application.
 Both versions have the same core features which are described above. However, the process and location of which the data is stored are distinct. The differences are listed below.
