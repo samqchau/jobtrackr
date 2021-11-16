@@ -204,20 +204,22 @@ const DetailModal = ({ app, handleClose, tab, toDetails, toNotes }) => {
           autoComplete='off'
         >
           <Form.Group as={Col} xs={12} sm={6} md={6} lg={6}>
-            <Form.Label>Company</Form.Label>
+            <Form.Label htmlFor='company'>Company</Form.Label>
             <Form.Control
               autoComplete='off'
               className='capitalize'
               value={company}
               placeholder='+ Company Name'
+              id='company'
               onChange={(e) => {
                 setCompany(e.target.value);
               }}
             ></Form.Control>
           </Form.Group>
           <Form.Group as={Col} xs={12} sm={6} md={6} lg={6}>
-            <Form.Label>Job Title</Form.Label>
+            <Form.Label htmlFor='job'>Job Title</Form.Label>
             <Form.Control
+              id='job'
               autoComplete='off'
               className='capitalize'
               value={jobTitle}
@@ -393,6 +395,7 @@ const DetailModal = ({ app, handleClose, tab, toDetails, toNotes }) => {
         </Col>
         <Button
           className='detail-modal-updateButton detailModal-updateButton-xs'
+          data-testid='primary-update-button'
           onClick={() => {
             handleUpdateButtonClick();
             modalRef.current.scrollIntoView({
