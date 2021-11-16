@@ -1,5 +1,7 @@
 # Jobtrackr
 
+**Checkout the live demo here - [JobTrackr - LocalStorage](https://samqchau.github.io/jobtrackr/)**
+
 <div align="center">
 
 ## Table of Contents
