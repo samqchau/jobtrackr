@@ -4,12 +4,9 @@ import { Row, Col } from 'react-bootstrap';
 import '../styles/listSelect.css';
 import nameValuePairs from '../data/lookUpTables/listNameValuePairs';
 import { USER_APPS_SUCCESS } from '../constants/appConstants';
-import axios from 'axios';
 
 const ListSelect = ({ close, app }) => {
   const dispatch = useDispatch();
-  const userLogin = useSelector((state) => state.userLogin);
-  const { userInfo } = userLogin;
   const userApps = useSelector((state) => state.userApps);
   const { apps } = userApps;
 
@@ -23,22 +20,6 @@ const ListSelect = ({ close, app }) => {
       let sourceListName = nameValuePairs[sourceList];
       let destinationList = i;
       let destinationListName = nameValuePairs[destinationList];
-      let appId = app.id;
-
-      let config = {
-        headers: {
-          Authorization: `Bearer ${userInfo.token}`,
-          'Content-Type': 'application/json',
-        },
-      };
-
-      let moveData = {
-        sourceIndex,
-        destinationIndex,
-        sourceList: sourceListName,
-        destinationList: destinationListName,
-        appId,
-      };
 
       let appsCopy = apps;
       let sourceArr = appsCopy[sourceListName];
@@ -56,8 +37,8 @@ const ListSelect = ({ close, app }) => {
       destinationArr.unshift(updatedApp);
       appsCopy[sourceListName] = sourceArr;
       appsCopy[destinationListName] = destinationArr;
+      localStorage.setItem('apps', JSON.stringify(appsCopy));
       dispatch({ type: USER_APPS_SUCCESS, payload: appsCopy });
-      await axios.put('/api/apps/update/index', moveData, config);
       close();
     }
   };
