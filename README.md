@@ -126,7 +126,9 @@ Each of these resources is accessible at their respective API endpoints.
 React Testing Library and Jest were used for automated testing. React Testing Library allowed automated integration tests to ensure core functionality was behaving as expected during development without testing implementation details.
 
 <div align="center">
+
 #### Protected Routes
+
 </div> 
    In version 2, Google Firebase is used for authentication. When the client authenticates through Firebase, Firebase returns a lot of information about the user. In this use case, only a user id and email are passed to the server to store in the Postgres database. The user id is salted and used to generate a token (JWT) that is passed back to the user. Every request users make is validated by Express middleware. The middleware recieves the token and decodes it. If the token is valid, the the next middleware in the proper request cycle is called, otherwise the user recieves an error message.
 
