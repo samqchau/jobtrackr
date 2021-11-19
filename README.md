@@ -164,9 +164,9 @@ Cypress was selected for end-to-end testing as React Testing Library is primaril
 
 ## After Thoughts
 
-#### The Tradeoffs of using a database
-
 </div> 
+ 
+#### The Tradeoffs of using a database
  
    The primary benefit of using a database is being able to host a database on the internet. This way, users can access their precious data as long as they have internet access. In addition, replicas of the database could quickly replace the database machine if it failed. In contrast, the live demo (Local Storage version) of JobTrackr stores all data using the browser's local storage. If a user had the single page application, the user could use the application without internet access, but if the user's machine was destroyed, they would lose all their data.
     
