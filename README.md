@@ -124,10 +124,7 @@ Each of these resources is accessible at their respective API endpoints.
 |              | last_updated   |  timestamp  |  CURRENT_TIMESTAMP  |                       |
 |              | content        |    text     |                     |       NOT NULL        |
 
-#### Testing
-
 </div>
-React Testing Library and Jest were used for automated testing. React Testing Library allowed automated integration tests to ensure core functionality was behaving as expected during development without testing implementation details.
 
 <div align="center">
 
@@ -142,11 +139,11 @@ React Testing Library and Jest were used for automated testing. React Testing Li
  
 </div>
 
-### Version 1 - Single Tiered App - (current repository)
+#### Version 1 - Single Tiered App - (current repository)
 
 React Testing Library was used for automated integration testing. Due to the scope of JobTrackr, a single integration test was able to cover all the key features in a single app's lifecycle. This included creating, updating, bookmarking, and deleting the app. The automated tests interact JobTrackr the same way a user would. DOM elements were selected through the recommended selector priority: by role, by placeholder, by text, and finally by unique data attributes when there were no other non-brittle identifying attributes.
  
-### Version 2 - Three Tiered App
+#### Version 2 - Three Tiered App
 
 **Checkout the Cypress tests here - *[JobTrackr - Cypress End-to-End Tests](https://github.com/samqchau/job-tracker/tree/cypress-test)***
 
@@ -161,10 +158,10 @@ Cypress was selected for end-to-end testing as React Testing Library is primaril
 <div align="center">
 
 ## After Thoughts
-
-</div> 
  
 #### The Tradeoffs of using a database
+ 
+ </div> 
  
    The primary benefit of using a database is being able to host a database on the internet. This way, users can access their precious data as long as they have internet access. In addition, replicas of the database could quickly replace the database machine if it failed. In contrast, the live demo (Local Storage version) of JobTrackr stores all data using the browser's local storage. If a user had the single page application, the user could use the application without internet access, but if the user's machine was destroyed, they would lose all their data.
     
