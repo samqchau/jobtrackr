@@ -160,8 +160,6 @@ Cypress was selected for end-to-end testing as React Testing Library is primaril
 
 <div align="center">
 
-<div align="center">
-
 ## After Thoughts
 
 </div> 
